@@ -30,7 +30,7 @@ This is a DBMS lab final project. Most of the logic lives in the database (const
 ```mermaid
 flowchart LR
     UI["Streamlit app<br/>streamlit_app.py"] -->|reads| V["12 views"]
-    UI -->|writes| P["7 stored procedures"]
+    UI -->|writes| P["10 stored procedures"]
     V --> T["18 tables"]
     P --> T
 ```

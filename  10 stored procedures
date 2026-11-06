@@ -1,0 +1,37 @@
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/DATABASE.md', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/README.md b/README.md[m
+[1mindex d70b1f0..e1b16e6 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -30,7 +30,7 @@[m [mThis is a DBMS lab final project. Most of the logic lives in the database (const[m
+ ```mermaid[m
+ flowchart LR[m
+     UI["Streamlit app<br/>streamlit_app.py"] -->|reads| V["12 views"][m
+[31m-    UI -->|writes| P["7 stored procedures"][m
+[32m+[m[32m    UI -->|writes| P["10 stored procedures"][m
+     V --> T["18 tables"][m
+     P --> T[m
+ ```[m
+[1mdiff --git a/docs/DATABASE.md b/docs/DATABASE.md[m
+[1mindex 3ad4812..5e90d76 100644[m
+[1m--- a/docs/DATABASE.md[m
+[1m+++ b/docs/DATABASE.md[m
+[36m@@ -1,6 +1,6 @@[m
+ # Database design[m
+ [m
+[31m-ReferralPath uses a MySQL 8 database named `referralpath` with **18 tables**, **12 views** and **7 stored procedures**. The Streamlit app reads through views and writes only through stored procedures.[m
+[32m+[m[32mReferralPath uses a MySQL 8 database named `referralpath` with **18 tables**, **12 views** and **10 stored procedures**. The Streamlit app reads through views and writes only through stored procedures.[m
+ [m
+ See [ERD.md](ERD.md) for the entity-relationship diagram.[m
+ [m
+[36m@@ -44,6 +44,9 @@[m [mAll data changes made by the app go through these procedures. Their definitions[m
+ | `sp_start_queue_service` | queue_id | Queue |[m
+ | `sp_complete_queue_visit` | queue_id | Queue |[m
+ | `sp_record_attendance_punch` | credential_id, source_id, event_type | Attendance |[m
+[32m+[m[32m| `sp_cancel_appointment` | see the definition in `database/referral_path.sql` | not used by the app yet |[m
+[32m+[m[32m| `sp_reschedule_appointment` | see the definition in `database/referral_path.sql` | not used by the app yet |[m
+[32m+[m[32m| `sp_update_referral_status` | see the definition in `database/referral_path.sql` | not used by the app yet |[m
+ [m
+ ## Tables[m
+ [m

@@ -1,6 +1,6 @@
 # Database design
 
-ReferralPath uses a MySQL 8 database named `referralpath` with **18 tables**, **12 views** and **7 stored procedures**. The Streamlit app reads through views and writes only through stored procedures.
+ReferralPath uses a MySQL 8 database named `referralpath` with **18 tables**, **12 views** and **10 stored procedures**. The Streamlit app reads through views and writes only through stored procedures.
 
 See [ERD.md](ERD.md) for the entity-relationship diagram.
 
@@ -44,6 +44,9 @@ All data changes made by the app go through these procedures. Their definitions 
 | `sp_start_queue_service` | queue_id | Queue |
 | `sp_complete_queue_visit` | queue_id | Queue |
 | `sp_record_attendance_punch` | credential_id, source_id, event_type | Attendance |
+| `sp_cancel_appointment` | see the definition in `database/referral_path.sql` | not used by the app yet |
+| `sp_reschedule_appointment` | see the definition in `database/referral_path.sql` | not used by the app yet |
+| `sp_update_referral_status` | see the definition in `database/referral_path.sql` | not used by the app yet |
 
 ## Tables
 
